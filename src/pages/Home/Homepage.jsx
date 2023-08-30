@@ -30,6 +30,9 @@ const TaskAndFilterWrapper = styled.div`
 		flex-direction: row-reverse;
 		gap: 10em;
 	}
+	@media only screen and (${devices["xl"]}) {
+		justify-content: space-between;
+	}
 `;
 
 export default Homepage;
