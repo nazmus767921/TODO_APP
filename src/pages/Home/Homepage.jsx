@@ -1,9 +1,9 @@
-import NavUserInfo from "../components/NavUserInfo";
+import NavUser from "../../components/nav/NavUser";
 
 const Homepage = () => {
 	return (
 		<>
-			<NavUserInfo />
+			<NavUser />
 		</>
 	);
 };
