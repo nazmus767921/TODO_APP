@@ -8,7 +8,7 @@ const CategoryShowcase = () => {
 	const constraintsRef = useRef(null);
 	return (
 		<Section ref={constraintsRef}>
-			<Wrapper drag="x" dragConstraints={constraintsRef} dragElastic={0.2}>
+			<Wrapper drag="x" dragConstraints={constraintsRef}>
 				<CategoryCard />
 				<CategoryCard />
 				<CategoryCard />
@@ -20,7 +20,7 @@ const CategoryShowcase = () => {
 
 const Wrapper = styled(motion.div)`
 	width: fit-content;
-    min-width: 100%;
+	min-width: 100%;
 	display: flex;
 	gap: 1em;
 	padding: 0 10%;
