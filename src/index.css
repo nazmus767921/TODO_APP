@@ -11,8 +11,8 @@ body {
 	font-size: 1.0256410256410258vw;
 	font-weight: 400;
 	line-height: 1.75;
-	background: white;
-	color: #000;
+	background: #fcfcfc;
+	color: #232323;
 }
 
 img {
@@ -46,7 +46,6 @@ h2,
 h3,
 h4,
 h5 {
-	margin: 3rem 0 1.38rem;
 	font-family: "Lato", sans-serif;
 	font-weight: 400;
 	line-height: 1.3;
@@ -69,7 +68,6 @@ h5 {
 }
 
 p {
-	margin-bottom: 1rem;
 	font-size: 1rem;
 }
 
