@@ -23,8 +23,9 @@ const Wrapper = styled(motion.div)`
 	min-width: 100%;
 	display: flex;
 	gap: 1em;
-	padding: 0 10%;
+	padding: 0 5%;
 	@media only screen and (${devices.md}) {
+		padding: 0 10%;
 		gap: 1.75em;
 	}
 	@media only screen and (${devices["2xl"]}) {

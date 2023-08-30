@@ -11,7 +11,7 @@ const OneLinerTitle = () => {
 	);
 };
 
-const Title = styled.h3``;
+const Title = styled.h2``;
 
 const Wrapper = styled.div`
 	display: flex;
