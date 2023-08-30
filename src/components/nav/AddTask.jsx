@@ -3,6 +3,7 @@ import { MdAddCircle } from "react-icons/md";
 import { ease } from "../../styles/animations";
 import { colors } from "../../styles/colors";
 import { devices } from "../../styles/devices";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
 	display: flex;
@@ -35,9 +36,11 @@ const AddTask = () => {
 	return (
 		<Wrapper>
 			<h2>Your Tasks</h2>
-			<Button>
-				<IconWrapper />
-			</Button>
+			<Link to={`/create-task`}>
+				<Button>
+					<IconWrapper />
+				</Button>
+			</Link>
 		</Wrapper>
 	);
 };

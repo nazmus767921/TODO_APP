@@ -1,0 +1,1 @@
+export const SET_TASK_FROM_INPUT = "SET_TASK_FROM_INPUT";
