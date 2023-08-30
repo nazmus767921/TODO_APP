@@ -27,6 +27,9 @@ const Wrapper = styled(motion.div)`
 	@media only screen and (${devices.md}) {
 		gap: 1.75em;
 	}
+	@media only screen and (${devices["2xl"]}) {
+		padding: 0 15%;
+	}
 `;
 
 const Section = styled(motion.div)`
