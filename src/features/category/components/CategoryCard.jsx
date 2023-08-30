@@ -12,7 +12,7 @@ const CategoryCard = () => {
 				</Amount>
 			</AmountWrapper>
 			<Title>
-				<h5>Development</h5>
+				<h5 className="text_small">Development</h5>
 			</Title>
 		</Wrapper>
 	);

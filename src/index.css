@@ -75,6 +75,11 @@ p {
 	font-size: 1rem;
 }
 
+small,
+.text_small {
+	font-size: 0.833rem;
+}
+
 /* Max Font Size */
 @media screen and (min-width: 1560px) {
 	body {

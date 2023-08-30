@@ -6,6 +6,7 @@ import FilterMenu from "../../features/filter/FilterMenu";
 import { styled } from "styled-components";
 import { devices } from "../../styles/devices";
 import CategoryShowcase from "../../features/category/CategoryShowcase";
+import TaskLists from "../../features/task/task_lists/TaskLists";
 
 const Homepage = () => {
 	return (
@@ -17,6 +18,7 @@ const Homepage = () => {
 				<FilterMenu />
 			</TaskAndFilterWrapper>
 			<CategoryShowcase />
+			<TaskLists />
 		</PageContainer>
 	);
 };

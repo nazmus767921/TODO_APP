@@ -34,7 +34,7 @@ const Button = styled.button`
 const AddTask = () => {
 	return (
 		<Wrapper>
-			<h2>My Task</h2>
+			<h2>Your Tasks</h2>
 			<Button>
 				<IconWrapper />
 			</Button>
