@@ -7,22 +7,22 @@ import { PageContainer } from "../../../styles/layout";
 import { Link } from "react-router-dom";
 import TextArea from "../../../components/form/textArea";
 import { devices } from "../../../styles/devices";
-import { DatePicker } from "@mui/x-date-pickers";
+// import { DatePicker } from "@mui/x-date-pickers";
 import Selection from "../../../components/form/Selection";
 import { colors } from "../../../styles/colors";
 import { ease } from "../../../styles/animations";
 
 const CreateTask = () => {
 	const {
-		task: { taskName, description, schedule, category },
+		task: { taskName, description, category },
 		handle_input,
-		handle_date_input,
+		// handle_date_input,
 	} = useTaskContext();
 
-	const sxDatePicker = {
-		// ".MuiInputBase-input": { border: "2px solid red" },
-		".MuiInputBase-root": { border: "2px solid red" },
-	};
+	// const sxDatePicker = {
+	// 	// ".MuiInputBase-input": { border: "2px solid red" },
+	// 	".MuiInputBase-root": { border: "2px solid red" },
+	// };
 
 	return (
 		<Section>
@@ -123,22 +123,22 @@ const TopBar = styled.div`
 	grid-area: topbar;
 `;
 
-const Form = styled.form`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	#description {
-		font-size: 1.25em;
-		font-family: "Lato";
-		color: #00000060;
-	}
-	@media only screen and (${devices.xl}) {
-		flex-direction: row;
-		gap: 2em;
-		align-items: flex-start;
-	}
-`;
+// const Form = styled.form`
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	width: 100%;
+// 	#description {
+// 		font-size: 1.25em;
+// 		font-family: "Lato";
+// 		color: #00000060;
+// 	}
+// 	@media only screen and (${devices.xl}) {
+// 		flex-direction: row;
+// 		gap: 2em;
+// 		align-items: flex-start;
+// 	}
+// `;
 
 const Wrapper = styled.div`
 	display: grid;
