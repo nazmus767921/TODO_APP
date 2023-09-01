@@ -5,7 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { iconFit } from "../../../styles/styleObject";
 import { PageContainer } from "../../../styles/layout";
 import { Link } from "react-router-dom";
-import TextArea from "../../../components/form/textArea";
+import TextArea from "../../../components/form/TextArea";
 import { devices } from "../../../styles/devices";
 import Selection from "../../../components/form/Selection";
 import { colors } from "../../../styles/colors";
