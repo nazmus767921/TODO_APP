@@ -79,6 +79,7 @@ const CreateTaskButton = styled.button`
 `;
 
 const BottomPageContainer = styled.div`
+	position: relative;
 	background-color: ${colors["teal-500"]};
 	flex-grow: 1;
 	margin: -2em 0 0 0;
