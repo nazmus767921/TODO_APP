@@ -7,7 +7,6 @@ import { PageContainer } from "../../../styles/layout";
 import { Link } from "react-router-dom";
 import TextArea from "../../../components/form/textArea";
 import { devices } from "../../../styles/devices";
-// import { DatePicker } from "@mui/x-date-pickers";
 import Selection from "../../../components/form/Selection";
 import { colors } from "../../../styles/colors";
 import { ease } from "../../../styles/animations";
@@ -16,13 +15,7 @@ const CreateTask = () => {
 	const {
 		task: { taskName, description, category },
 		handle_input,
-		// handle_date_input,
 	} = useTaskContext();
-
-	// const sxDatePicker = {
-	// 	// ".MuiInputBase-input": { border: "2px solid red" },
-	// 	".MuiInputBase-root": { border: "2px solid red" },
-	// };
 
 	return (
 		<Section>
@@ -37,7 +30,6 @@ const CreateTask = () => {
 							</Link>
 						</TopBar>
 						<h2 className="title">create a new Task</h2>
-						{/* <Form> */}
 						<TextInput
 							name="taskName"
 							type="text"
@@ -52,17 +44,11 @@ const CreateTask = () => {
 							onChange={handle_input}
 							label="Description"
 						/>
-						{/* <DatePicker
-						value={schedule}
-						onChange={(newValue) => handle_date_input(newValue)}
-						sx={sxDatePicker}
-					/> */}
 						<Selection
 							value={category}
 							label="category"
 							onChange={handle_input}
 						/>
-						{/* </Form> */}
 					</Wrapper>
 				</PageContainer>
 			</TopPageContainer>
@@ -123,23 +109,6 @@ const TopBar = styled.div`
 	grid-area: topbar;
 `;
 
-// const Form = styled.form`
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// 	width: 100%;
-// 	#description {
-// 		font-size: 1.25em;
-// 		font-family: "Lato";
-// 		color: #00000060;
-// 	}
-// 	@media only screen and (${devices.xl}) {
-// 		flex-direction: row;
-// 		gap: 2em;
-// 		align-items: flex-start;
-// 	}
-// `;
-
 const Wrapper = styled.div`
 	display: grid;
 	gap: 2em;
@@ -175,7 +144,6 @@ const Wrapper = styled.div`
 const Section = styled.div`
 	display: grid;
 	min-height: 100vh;
-	/* flex-direction: column; */
 	grid-template-rows: auto 1fr;
 `;
 
