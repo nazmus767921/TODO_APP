@@ -1,28 +1,32 @@
 import { styled } from "styled-components";
-import { colors } from "../../../../../styles/colors";
+import { colors } from "../../styles/colors";
 
-const TextInput = ({
-	name = "text",
-	type = "text",
+const TextArea = ({
+	name = "textarea",
+	type,
 	value,
 	onChange,
-	label = "text field",
+	label = "text area",
 }) => {
 	return (
-		<Wrapper>
+		<Wrapper id={name}>
 			<label htmlFor={name}>{label}</label>
 			<Input
 				id={name}
 				name={name}
 				type={type}
 				value={value}
-				onChange={onChange}
+				onChange={(e) => {
+					onChange(e);
+					e.target.style.height = "auto";
+					e.target.style.height = `${e.target.scrollHeight}px`;
+				}}
 			/>
 		</Wrapper>
 	);
 };
 
-const Input = styled.input`
+const Input = styled.textarea`
 	font-size: 1.5em;
 	text-align: center;
 	font-weight: 900;
@@ -30,9 +34,15 @@ const Input = styled.input`
 	padding: 0.5em 1em;
 	border-radius: 0.75em;
 	border: 2px solid ${colors["teal-500"]};
+	max-width: 100%;
+	min-width: 100%;
+	min-height: 10ch;
+	max-height: 16ch;
+	overflow: hidden;
 `;
 
 const Wrapper = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;
@@ -46,4 +56,4 @@ const Wrapper = styled.div`
 	}
 `;
 
-export default TextInput;
+export default TextArea;

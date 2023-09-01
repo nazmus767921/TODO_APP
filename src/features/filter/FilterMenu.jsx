@@ -22,9 +22,11 @@ const Wrapper = styled.div`
 	justify-content: space-between;
 	gap: 0.75em;
 	margin-block: 2.5em;
-	border: 2px solid ${colors.black}20;
 	padding: 0.2em 0.5em;
 	border-radius: 999px;
+	@media only screen and (${devices.md}) {
+		border: 2px solid ${colors.black}20;
+	}
 	@media only screen and (${devices["xl"]}) {
 		width: 50%;
 	}

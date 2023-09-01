@@ -39,7 +39,7 @@ const Category = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: ${colors["blue-500"]};
+	background-color: ${colors["teal-500"]};
 	color: white;
 	padding: 2em 1em;
 `;

@@ -1,5 +1,10 @@
 import { styled } from "styled-components";
 import backgroundImage from "../assets/taskCategoryBg1.jpeg";
+import backgroundImage2 from "../assets/taskCategoryBg2.jpg";
+import backgroundImage3 from "../assets/taskCategoryBg3.jpg";
+
+const backgroundImages = [backgroundImage, backgroundImage2, backgroundImage3];
+const randomBgIndex = Math.floor(Math.random() * backgroundImages.length);
 
 const CategoryCard = () => {
 	return (
@@ -58,7 +63,7 @@ const Wrapper = styled.div`
 	flex-shrink: 0;
 	gap: 4em;
 	padding: 1.25em 1em;
-	background-image: url(${backgroundImage});
+	background-image: url(${backgroundImages[randomBgIndex]});
 	background-size: cover;
 	background-position: center;
 	border-radius: 1em;
