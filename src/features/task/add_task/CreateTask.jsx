@@ -10,6 +10,7 @@ import { devices } from "../../../styles/devices";
 import Selection from "../../../components/form/Selection";
 import { colors } from "../../../styles/colors";
 import { ease } from "../../../styles/animations";
+import TopNavigationBar from "../../../components/ui/TopNavigationBar";
 
 const CreateTask = () => {
 	const {
@@ -22,13 +23,7 @@ const CreateTask = () => {
 			<TopPageContainer>
 				<Container>
 					<Wrapper>
-						<TopBar>
-							<Link to={`/`}>
-								<BackHomeButton>
-									<IoIosArrowBack style={iconFit} />
-								</BackHomeButton>
-							</Link>
-						</TopBar>
+						<TopNavigationBar />
 						<h2 className="title">create a new Task</h2>
 						<TextInput
 							name="taskName"
@@ -94,20 +89,6 @@ const TopPageContainer = styled.div`
 	background-color: ${colors["white-100"]};
 	position: relative;
 	z-index: 10;
-`;
-
-const BackHomeButton = styled.button`
-	width: 2em;
-	aspect-ratio: 1;
-`;
-
-const TopBar = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-block: 2em;
-	width: 100%;
-	grid-area: topbar;
 `;
 
 const Wrapper = styled.div`

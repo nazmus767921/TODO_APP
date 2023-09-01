@@ -2,18 +2,31 @@ import { styled } from "styled-components";
 import OneLinerTitle from "./components/OneLinerTitle";
 import TaskCard from "./components/TaskCard";
 import { devices } from "../../../styles/devices";
+import { Link } from "react-router-dom";
 
 const TaskLists = () => {
 	return (
 		<Wrapper>
 			<OneLinerTitle />
 			<ListWrapper>
-				<TaskCard />
-				<TaskCard />
-				<TaskCard />
-				<TaskCard />
-				<TaskCard />
-				<TaskCard />
+				<Link to={`/task/232`}>
+					<TaskCard />
+				</Link>
+				<Link to={`/task/232`}>
+					<TaskCard />
+				</Link>
+				<Link to={`/task/232`}>
+					<TaskCard />
+				</Link>
+				<Link to={`/task/232`}>
+					<TaskCard />
+				</Link>
+				<Link to={`/task/232`}>
+					<TaskCard />
+				</Link>
+				<Link to={`/task/232`}>
+					<TaskCard />
+				</Link>
 			</ListWrapper>
 		</Wrapper>
 	);
@@ -21,7 +34,6 @@ const TaskLists = () => {
 
 const ListWrapper = styled.div`
 	display: grid;
-
 	gap: 1.5em;
 	@media only screen and (${devices.xl}) {
 		gap: 2em;
