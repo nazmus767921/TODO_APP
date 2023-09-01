@@ -1,10 +1,7 @@
 import { styled } from "styled-components";
 import TextInput from "../../../components/form/TextInput";
 import { useTaskContext } from "../contexts/task_context";
-import { IoIosArrowBack } from "react-icons/io";
-import { iconFit } from "../../../styles/styleObject";
 import { PageContainer } from "../../../styles/layout";
-import { Link } from "react-router-dom";
 import TextArea from "../../../components/form/TextArea";
 import { devices } from "../../../styles/devices";
 import Selection from "../../../components/form/Selection";
@@ -24,7 +21,7 @@ const CreateTask = () => {
 				<Container>
 					<Wrapper>
 						<TopNavigationBar />
-						<h2 className="title">create a new Task</h2>
+						<h2 className="title">create a new task</h2>
 						<TextInput
 							name="taskName"
 							type="text"
@@ -115,6 +112,9 @@ const Wrapper = styled.div`
 		#category {
 			grid-area: category;
 		}
+	}
+	#top_bar {
+		grid-column: topbar;
 	}
 
 	.title {
