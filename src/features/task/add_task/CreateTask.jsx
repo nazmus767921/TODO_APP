@@ -20,7 +20,7 @@ const CreateTask = () => {
 	return (
 		<Section>
 			<TopPageContainer>
-				<PageContainer>
+				<Container>
 					<Wrapper>
 						<TopBar>
 							<Link to={`/`}>
@@ -50,7 +50,7 @@ const CreateTask = () => {
 							onChange={handle_input}
 						/>
 					</Wrapper>
-				</PageContainer>
+				</Container>
 			</TopPageContainer>
 			<BottomPageContainer>
 				<CreateTaskButton>Create Task</CreateTaskButton>
@@ -139,6 +139,12 @@ const Wrapper = styled.div`
 	.title {
 		text-transform: capitalize;
 		margin-block: 1em;
+	}
+`;
+
+const Container = styled(PageContainer)`
+	@media only screen and (${devices["xl"]}) {
+		width: 50%;
 	}
 `;
 
