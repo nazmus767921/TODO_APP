@@ -7,6 +7,7 @@ import { styled } from "styled-components";
 import { devices } from "../../styles/devices";
 import CategoryShowcase from "../../features/category/CategoryShowcase";
 import TaskLists from "../../features/task/task_lists/TaskLists";
+import OneLinerTitle from "../../features/task/task_lists/components/OneLinerTitle";
 
 const Homepage = () => {
 	return (
@@ -18,6 +19,7 @@ const Homepage = () => {
 				<FilterMenu />
 			</TaskAndFilterWrapper>
 			<CategoryShowcase />
+			<OneLinerTitle />
 			<TaskLists />
 		</PageContainer>
 	);

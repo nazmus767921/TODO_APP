@@ -2,10 +2,11 @@ import { styled } from "styled-components";
 import { IoCheckmarkDone } from "react-icons/io5";
 import { iconFit } from "../../../styles/styleObject";
 import { colors } from "../../../styles/colors";
+import { ease } from "../../../styles/animations";
 
 const ActionButton = () => {
 	return (
-		<Button>
+		<Button type="button">
 			<IconWrapper>
 				<IoCheckmarkDone style={iconFit} />
 			</IconWrapper>
@@ -35,5 +36,11 @@ const Button = styled.button`
 	padding: 0 1em;
 	border-radius: 0.5em;
 	color: ${colors["white-100"]};
+	transition: filter 0.35s ${ease["out-expo"]};
+	&:hover,
+	:active,
+	:focus {
+		filter: brightness(0.9);
+	}
 `;
 export default ActionButton;

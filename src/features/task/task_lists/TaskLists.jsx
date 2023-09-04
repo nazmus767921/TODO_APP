@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import OneLinerTitle from "./components/OneLinerTitle";
 import TaskCard from "./components/TaskCard";
 import { devices } from "../../../styles/devices";
 import { Link } from "react-router-dom";
@@ -7,18 +6,17 @@ import { Link } from "react-router-dom";
 const TaskLists = () => {
 	return (
 		<Wrapper>
-			<OneLinerTitle />
 			<ListWrapper>
 				<Link to={`/task/232`}>
 					<TaskCard />
 				</Link>
-				<Link to={`/task/232`}>
+				<Link to={`/task/245`}>
 					<TaskCard />
 				</Link>
-				<Link to={`/task/232`}>
+				<Link to={`/task/246`}>
 					<TaskCard />
 				</Link>
-				<Link to={`/task/232`}>
+				<Link to={`/task/245`}>
 					<TaskCard />
 				</Link>
 				<Link to={`/task/232`}>

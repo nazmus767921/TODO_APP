@@ -3,16 +3,25 @@ import CategoryCard from "./components/CategoryCard";
 import { devices } from "../../styles/devices";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const CategoryShowcase = () => {
 	const constraintsRef = useRef(null);
 	return (
 		<Section ref={constraintsRef}>
 			<Wrapper drag="x" dragConstraints={constraintsRef}>
-				<CategoryCard />
-				<CategoryCard />
-				<CategoryCard />
-				<CategoryCard />
+				<Link to={`categories/development`}>
+					<CategoryCard />
+				</Link>
+				<Link to={`categories/development`}>
+					<CategoryCard />
+				</Link>
+				<Link to={`categories/development`}>
+					<CategoryCard />
+				</Link>
+				<Link to={`categories/development`}>
+					<CategoryCard />
+				</Link>
 			</Wrapper>
 		</Section>
 	);
