@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
-import TopNavigationBar from "../components/ui/TopNavigationBar";
-import { PageContainer } from "../styles/layout";
+import TopNavigationBar from "../../components/ui/TopNavigationBar";
+import { PageContainer } from "../../styles/layout";
 import { BsFillFileTextFill, BsCalendarMinusFill } from "react-icons/bs";
 import { TbFlag3Filled } from "react-icons/tb";
-import { iconFit } from "../styles/styleObject";
-import { colors } from "../styles/colors";
-import { HR } from "../components/ui/styled_elements";
-import { devices } from "../styles/devices";
+import { iconFit } from "../../styles/styleObject";
+import { colors } from "../../styles/colors";
+import { HR } from "../../components/ui/styled_elements";
+import { devices } from "../../styles/devices";
+import ActionButton from "./components/ActionButton";
 
 const TaskDetails = () => {
 	return (
@@ -38,6 +39,7 @@ const TaskDetails = () => {
 						<TbFlag3Filled style={iconFit} />
 					</IconWrapper>
 					<h5 className="text priority-label">Priority 1</h5>
+					<ActionButton />
 				</Wrapper>
 			</GridPageContainer>
 		</>

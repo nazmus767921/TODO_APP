@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/Home/Homepage";
 import CreateTask from "./features/task/add_task/CreateTask";
-import TaskDetails from "./pages/TaskDetails";
+import TaskDetails from "./pages/Task_Details/TaskDetails";
 
 const router = createBrowserRouter([
 	{
