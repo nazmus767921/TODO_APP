@@ -64,7 +64,11 @@ const Wrapper = styled.div`
 	grid-template-columns: 1.5em 1fr;
 	align-content: start;
 	align-items: start;
+	align-self: end;
+	margin-bottom: 2.5em;
 	@media only screen and (${devices.xl}) {
+		margin-bottom: 0;
+		align-self: center;
 		min-width: 50%;
 		max-width: max(70%, fit-content);
 		min-height: 100%;

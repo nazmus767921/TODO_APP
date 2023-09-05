@@ -32,12 +32,11 @@ const UserProfile = styled.div`
 `;
 
 const NavUser = () => {
-	//Monday,1 June
 	return (
 		<Wrapper>
 			<UserInfo>
 				<h1>Hi, Nazmus</h1>
-				<Date>{moment().format("dddd d MMM")}</Date>
+				<Date>{moment().format("dddd, d MMM")}</Date>
 			</UserInfo>
 			<UserProfile>
 				<img src={UserProfileImage} alt="name" />
