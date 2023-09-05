@@ -2,21 +2,24 @@ import { styled } from "styled-components";
 import { colors } from "../../../../styles/colors";
 import { MdCategory } from "react-icons/md";
 import { iconFit } from "../../../../styles/styleObject";
+import { Link } from "react-router-dom";
 
-const TaskCard = ({ taskName, description, category }) => {
+const TaskCard = ({ id, taskName, description, category }) => {
 	return (
-		<Wrapper>
-			<Category>
-				<IconWrapper>
-					<MdCategory style={iconFit} />
-				</IconWrapper>
-				<h4 className="text_small">{category}</h4>
-			</Category>
-			<Info>
-				<h4 className="title">{taskName}</h4>
-				<p className="text_small">{description}</p>
-			</Info>
-		</Wrapper>
+		<Link to={`/task/${id}`}>
+			<Wrapper>
+				<Category>
+					<IconWrapper>
+						<MdCategory style={iconFit} />
+					</IconWrapper>
+					<h4 className="text_small">{category}</h4>
+				</Category>
+				<Info>
+					<h4 className="title">{taskName}</h4>
+					<p className="text_small">{description}</p>
+				</Info>
+			</Wrapper>
+		</Link>
 	);
 };
 

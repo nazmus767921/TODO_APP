@@ -4,17 +4,12 @@ import { devices } from "../../../styles/devices";
 import { Link } from "react-router-dom";
 import { useTaskContext } from "../contexts/task_context";
 
-const TaskLists = () => {
-	const { list } = useTaskContext();
+const TaskLists = ({ data }) => {
 	return (
 		<Wrapper>
 			<ListWrapper>
-				{list.map((task, index) => {
-					return (
-						<Link to={`/task/:${task.id}`} key={index}>
-							<TaskCard {...task} />
-						</Link>
-					);
+				{data.map((task, index) => {
+					return <TaskCard {...task} key={index} />;
 				})}
 			</ListWrapper>
 		</Wrapper>

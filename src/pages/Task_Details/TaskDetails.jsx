@@ -8,16 +8,23 @@ import { colors } from "../../styles/colors";
 import { HR } from "../../components/ui/styled_elements";
 import { devices } from "../../styles/devices";
 import ActionButton from "./components/ActionButton";
+import { useParams } from "react-router-dom";
+import { useTaskContext } from "../../features/task/contexts/task_context";
 
 const TaskDetails = () => {
+	const { list } = useTaskContext();
+	const { id } = useParams();
+	const { taskName, description, category } = list.find(
+		(task) => task.id === id
+	);
 	return (
 		<>
 			<GridPageContainer>
 				<TopNavigationBar />
 				<Wrapper>
 					<div className="header">
-						<h1 className="text title">Task Name</h1>
-						<p className="text category text_small">Development</p>
+						<h1 className="text title">{taskName}</h1>
+						<p className="text category text_small">{category}</p>
 						<HR
 							height="2px"
 							style={{ marginBlock: "1.25em", borderRadius: "9999px" }}
@@ -26,11 +33,7 @@ const TaskDetails = () => {
 					<IconWrapper className="icon">
 						<BsFillFileTextFill style={iconFit} />
 					</IconWrapper>
-					<p className="text description">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-						voluptas, repudiandae cumque animi repellat ullam totam deserunt
-						tenetur quam. Maxime impedit eveniet autem inventore nostrum!
-					</p>
+					<p className="text description">{description}</p>
 					<IconWrapper className="icon">
 						<BsCalendarMinusFill style={iconFit} />
 					</IconWrapper>
@@ -57,10 +60,13 @@ const IconWrapper = styled.div`
 const Wrapper = styled.div`
 	display: grid;
 	gap: 1em;
+	min-width: 100%;
 	grid-template-columns: 1.5em 1fr;
 	align-content: start;
 	align-items: start;
 	@media only screen and (${devices.xl}) {
+		min-width: 50%;
+		max-width: max(70%, fit-content);
 		min-height: 100%;
 		max-height: fit-content;
 		align-content: center;
@@ -82,6 +88,7 @@ const Wrapper = styled.div`
 	}
 	.header {
 		grid-column: span 2;
+		text-transform: capitalize;
 	}
 	.title {
 		grid-column: span 2;

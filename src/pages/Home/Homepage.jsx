@@ -8,8 +8,12 @@ import { devices } from "../../styles/devices";
 import CategoryShowcase from "../../features/category/CategoryShowcase";
 import TaskLists from "../../features/task/task_lists/TaskLists";
 import OneLinerTitle from "../../features/task/task_lists/components/OneLinerTitle";
+import { useTaskContext } from "../../features/task/contexts/task_context";
+import InfoTag from "../../components/ui/InfoTag";
 
 const Homepage = () => {
+	const { list } = useTaskContext();
+	const listOfFive = list.slice(0, 5);
 	return (
 		<PageContainer>
 			<NavUser />
@@ -20,7 +24,11 @@ const Homepage = () => {
 			</TaskAndFilterWrapper>
 			<CategoryShowcase />
 			<OneLinerTitle />
-			<TaskLists />
+			{list.length > 0 ? (
+				<TaskLists data={listOfFive} />
+			) : (
+				<InfoTag>No tasks assigned</InfoTag>
+			)}
 		</PageContainer>
 	);
 };

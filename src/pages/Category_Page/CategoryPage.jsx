@@ -6,31 +6,65 @@ import TaskLists from "../../features/task/task_lists/TaskLists";
 import { HR } from "../../components/ui/styled_elements";
 import { iconFit } from "../../styles/styleObject";
 import { CgQuote } from "react-icons/cg";
+import { useParams } from "react-router-dom";
+import { useTaskContext } from "../../features/task/contexts/task_context";
 
 const CategoryPage = () => {
+	const { category } = useParams();
+	const { categories, list } = useTaskContext();
+	const { tasksAssigned } = categories.find(
+		(c) => c.categoryName.toLowerCase() === category.toLowerCase()
+	);
+
+	//=> DATA IN SPECIFIC CATEGORY <==//
+	const dataInThisCategory = list.filter((task) => {
+		return task.category === category;
+	});
+
 	return (
 		<GridPageContainer>
 			<TopNavigationBar />
-			<Wrapper>
-				<div>
+			{tasksAssigned < 1 ? (
+				<FlexCenter>
 					<div style={{ position: "relative" }}>
 						<IconWrapper>
 							<CgQuote style={iconFit} />
 						</IconWrapper>
-						<h2 className="Header">
-							You&apos;have 10 Development tasks to complete
-						</h2>
+						<h2 className="header">No Tasks Assigned to {category}</h2>
 					</div>
-					<HR
-						height="2px"
-						style={{ marginBlock: "2em", borderRadius: "9999px" }}
-					/>
-				</div>
-				<TaskLists />
-			</Wrapper>
+				</FlexCenter>
+			) : (
+				<Wrapper>
+					<div>
+						<div style={{ position: "relative" }}>
+							<IconWrapper>
+								<CgQuote style={iconFit} />
+							</IconWrapper>
+							<h2 className="Header">
+								You have {tasksAssigned} {category} tasks to complete
+							</h2>
+						</div>
+						<HR
+							height="2px"
+							style={{ marginBlock: "2em", borderRadius: "9999px" }}
+						/>
+					</div>
+					<TaskLists data={dataInThisCategory} />
+				</Wrapper>
+			)}
 		</GridPageContainer>
 	);
 };
+
+const FlexCenter = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.header {
+		text-align: center;
+		color: ${colors["black"]};
+	}
+`;
 
 const IconWrapper = styled.div`
 	width: 6em;
@@ -38,9 +72,6 @@ const IconWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin-inline: auto;
-	/* position: absolute;
-	top: -1.6em;
-	left: -1em; */
 	color: ${colors["teal-500"]};
 `;
 
@@ -51,10 +82,6 @@ const Wrapper = styled.div`
 	grid-template-rows: auto 1fr;
 	align-items: start;
 	margin-inline: auto;
-	.Header {
-		text-align: center;
-		color: ${colors["black"]};
-	}
 `;
 
 const GridPageContainer = styled(PageContainer)`

@@ -11,7 +11,9 @@ export const task_reducer = (state, action) => {
 		return { ...state, task };
 	}
 	if (action.type === ADD_TASK_TO_LIST) {
-		const list = [...state.list, state.task];
+		const randomId = crypto.randomUUID();
+		const task = { ...state.task, id: randomId };
+		const list = [...state.list, task];
 		return {
 			...state,
 			list,

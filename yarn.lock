@@ -1461,22 +1461,12 @@
     "@mui/utils" "^5.14.7"
     prop-types "^15.8.1"
 
-"@mui/styled-engine-sc@^5.14.7":
+"@mui/styled-engine@^5.14.7", "@mui/styled-engine@npm:@mui/styled-engine-sc@latest":
   version "5.14.7"
   resolved "https://registry.yarnpkg.com/@mui/styled-engine-sc/-/styled-engine-sc-5.14.7.tgz#6ab83eabe09ac4cf5d346f6b3cf9c3aee603abee"
   integrity sha512-so3X2N0SxpXjc61+d6s0aG11OVF9XTDrKusaXd8YE1d9fzEuIGEpvOXizaMJZThqkTqGzNKQuXFEpC55Vb0gdw==
   dependencies:
     "@babel/runtime" "^7.22.10"
-    prop-types "^15.8.1"
-
-"@mui/styled-engine@^5.14.7":
-  version "5.14.7"
-  resolved "https://registry.yarnpkg.com/@mui/styled-engine/-/styled-engine-5.14.7.tgz#aaacec6c87bcc9a180b2da062c613213af10f2e3"
-  integrity sha512-hKBETEDsIAkL8/mBwPiQj/vw28OeIhMXC3Tvj4J2bb9snxAKpiZioR1PwqP+6P41twsC/GKBd0Vr9oaWYaHuMg==
-  dependencies:
-    "@babel/runtime" "^7.22.10"
-    "@emotion/cache" "^11.11.0"
-    csstype "^3.1.2"
     prop-types "^15.8.1"
 
 "@mui/system@^5.14.7":
@@ -2901,6 +2891,11 @@ minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
   dependencies:
     brace-expansion "^1.1.7"
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 ms@2.1.2:
   version "2.1.2"

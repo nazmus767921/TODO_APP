@@ -14,7 +14,7 @@ const CategoryShowcase = () => {
 			<Wrapper drag="x" dragConstraints={constraintsRef}>
 				{categories.map((category) => {
 					return (
-						<Link to={`categories/development`} key={category.id}>
+						<Link to={`categories/${category.categoryName}`} key={category.id}>
 							<CategoryCard {...category} />
 						</Link>
 					);

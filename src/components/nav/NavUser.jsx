@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import UserProfileImage from "./assets/user-dummy-800x789.png";
 import { colors } from "../../styles/colors";
+import moment from "moment/moment";
 
 const Wrapper = styled.div`
 	display: flex;
@@ -31,11 +32,12 @@ const UserProfile = styled.div`
 `;
 
 const NavUser = () => {
+	//Monday,1 June
 	return (
 		<Wrapper>
 			<UserInfo>
 				<h1>Hi, Nazmus</h1>
-				<Date>Monday,1 June</Date>
+				<Date>{moment().format("dddd d MMM")}</Date>
 			</UserInfo>
 			<UserProfile>
 				<img src={UserProfileImage} alt="name" />
