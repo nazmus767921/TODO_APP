@@ -4,24 +4,21 @@ import { devices } from "../../styles/devices";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useTaskContext } from "../task/contexts/task_context";
 
 const CategoryShowcase = () => {
 	const constraintsRef = useRef(null);
+	const { categories } = useTaskContext();
 	return (
 		<Section ref={constraintsRef}>
 			<Wrapper drag="x" dragConstraints={constraintsRef}>
-				<Link to={`categories/development`}>
-					<CategoryCard />
-				</Link>
-				<Link to={`categories/development`}>
-					<CategoryCard />
-				</Link>
-				<Link to={`categories/development`}>
-					<CategoryCard />
-				</Link>
-				<Link to={`categories/development`}>
-					<CategoryCard />
-				</Link>
+				{categories.map((category) => {
+					return (
+						<Link to={`categories/development`} key={category.id}>
+							<CategoryCard {...category} />
+						</Link>
+					);
+				})}
 			</Wrapper>
 		</Section>
 	);

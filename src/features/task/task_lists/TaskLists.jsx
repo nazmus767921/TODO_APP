@@ -2,29 +2,20 @@ import { styled } from "styled-components";
 import TaskCard from "./components/TaskCard";
 import { devices } from "../../../styles/devices";
 import { Link } from "react-router-dom";
+import { useTaskContext } from "../contexts/task_context";
 
 const TaskLists = () => {
+	const { list } = useTaskContext();
 	return (
 		<Wrapper>
 			<ListWrapper>
-				<Link to={`/task/232`}>
-					<TaskCard />
-				</Link>
-				<Link to={`/task/245`}>
-					<TaskCard />
-				</Link>
-				<Link to={`/task/246`}>
-					<TaskCard />
-				</Link>
-				<Link to={`/task/245`}>
-					<TaskCard />
-				</Link>
-				<Link to={`/task/232`}>
-					<TaskCard />
-				</Link>
-				<Link to={`/task/232`}>
-					<TaskCard />
-				</Link>
+				{list.map((task, index) => {
+					return (
+						<Link to={`/task/:${task.id}`} key={index}>
+							<TaskCard {...task} />
+						</Link>
+					);
+				})}
 			</ListWrapper>
 		</Wrapper>
 	);
@@ -32,6 +23,7 @@ const TaskLists = () => {
 
 const ListWrapper = styled.div`
 	display: grid;
+	width: 100%;
 	gap: 1.5em;
 	@media only screen and (${devices.xl}) {
 		gap: 2em;

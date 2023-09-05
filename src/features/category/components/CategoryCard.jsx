@@ -6,18 +6,18 @@ import backgroundImage3 from "../assets/taskCategoryBg3.jpg";
 const backgroundImages = [backgroundImage, backgroundImage2, backgroundImage3];
 const randomBgIndex = Math.floor(Math.random() * backgroundImages.length);
 
-const CategoryCard = () => {
+const CategoryCard = ({ categoryName, tasksAssigned }) => {
 	return (
 		<Wrapper>
 			<AmountWrapper>
 				<Vector />
 				<Amount>
-					<h1>10</h1>
+					<h1>{tasksAssigned}</h1>
 					<h4>Tasks</h4>
 				</Amount>
 			</AmountWrapper>
 			<Title>
-				<h5 className="text_small">Development</h5>
+				<h5 className="text_small">{categoryName}</h5>
 			</Title>
 		</Wrapper>
 	);
@@ -46,6 +46,10 @@ const Vector = styled.div`
 `;
 
 const Amount = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	z-index: 10;
 `;
@@ -58,7 +62,9 @@ const AmountWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
+	text-transform: capitalize;
 	display: flex;
+	min-width: 10em;
 	flex-direction: column;
 	flex-shrink: 0;
 	gap: 4em;

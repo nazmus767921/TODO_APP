@@ -3,21 +3,18 @@ import { colors } from "../../../../styles/colors";
 import { MdCategory } from "react-icons/md";
 import { iconFit } from "../../../../styles/styleObject";
 
-const TaskCard = () => {
+const TaskCard = ({ taskName, description, category }) => {
 	return (
 		<Wrapper>
 			<Category>
 				<IconWrapper>
 					<MdCategory style={iconFit} />
 				</IconWrapper>
-				<h4 className="text_small">Development</h4>
+				<h4 className="text_small">{category}</h4>
 			</Category>
 			<Info>
-				<h4>Do This Shit</h4>
-				<p className="text_small">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse non cupi
-					ex.
-				</p>
+				<h4 className="title">{taskName}</h4>
+				<p className="text_small">{description}</p>
 			</Info>
 		</Wrapper>
 	);
@@ -27,6 +24,9 @@ const Info = styled.div`
 	padding: 1.25em 2em 1.25em 0;
 	text-align: right;
 	width: 100%;
+	.title {
+		text-transform: capitalize;
+	}
 `;
 
 const IconWrapper = styled.div`
@@ -35,6 +35,7 @@ const IconWrapper = styled.div`
 `;
 
 const Category = styled.div`
+	text-transform: capitalize;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

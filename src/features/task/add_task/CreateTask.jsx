@@ -11,8 +11,10 @@ import TopNavigationBar from "../../../components/ui/TopNavigationBar";
 
 const CreateTask = () => {
 	const {
+		categories,
 		task: { taskName, description, category },
 		handle_input,
+		add_task,
 	} = useTaskContext();
 
 	return (
@@ -37,6 +39,7 @@ const CreateTask = () => {
 							label="Description"
 						/>
 						<Selection
+							options={categories}
 							value={category}
 							label="category"
 							onChange={handle_input}
@@ -45,7 +48,9 @@ const CreateTask = () => {
 				</Container>
 			</TopPageContainer>
 			<BottomPageContainer>
-				<CreateTaskButton>Create Task</CreateTaskButton>
+				<CreateTaskButton type="button" onClick={add_task}>
+					Create Task
+				</CreateTaskButton>
 			</BottomPageContainer>
 		</Section>
 	);

@@ -1,13 +1,16 @@
 import { styled } from "styled-components";
 import { colors } from "../../styles/colors";
 
-const Selection = ({ value, label, onChange }) => {
+const Selection = ({ value, label, onChange, options }) => {
 	return (
 		<Wrapper id={label}>
 			<label htmlFor="category">{label}</label>
 			<Select name="category" id="category" value={value} onChange={onChange}>
-				<option value="development">development</option>
-				<option value="design">design</option>
+				{options.map((option) => (
+					<option value={option.categoryName} key={option.id}>
+						{option.categoryName}
+					</option>
+				))}
 			</Select>
 		</Wrapper>
 	);
